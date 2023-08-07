@@ -5,12 +5,6 @@ function Section(){
     return(
         <div className='container' id='section'>
             <h2>Section</h2>
-            <h2>Section</h2>
-            <h2>Section</h2>
-            <h2>Section</h2>
-            <h2>Section</h2>
-            <h2>Section</h2>
-            <h2>Section</h2>
         </div>
     )
 }

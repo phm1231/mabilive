@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from './header';
 import Footer from './footer';
-import Navbar from './nav';
 import Section from './section';
 import Aside from './aside';
 import './layout.css';
@@ -12,9 +11,6 @@ function Layout(){
         <Container fluid>
             <Row>
                 <Col><Header></Header></Col>
-            </Row>
-            <Row>
-                <Col><Navbar></Navbar></Col>
             </Row>
             <Row>
                 <Col><Section></Section></Col>

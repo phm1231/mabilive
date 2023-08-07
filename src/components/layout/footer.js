@@ -3,8 +3,8 @@ import './footer.css';
 
 function Footer(){
     return(
-        <div className='container'>
-            <h2>Footer</h2>
+        <div class='container bg-light '>
+            <p class="text-center fs-6 fw-lighter">Footer is Here</p>
         </div>
     )
 }
