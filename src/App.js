@@ -6,6 +6,7 @@ import Stone from './pages/stone';
 import Nav from './components/layout/navigationBar';
 import Footer from './components/layout/footer';
 
+
 function App() {
 
   return (
