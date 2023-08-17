@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Modal from '../components/modal';
 import ItemInfoInput from '../components/tool/itemInfoInput';
 import OptionInfoInput from '../components/tool/optionInfoInput';
@@ -9,17 +9,12 @@ import OptionInfoInput from '../components/tool/optionInfoInput';
 function Home(){
     // <Counter>
     // <ToolPriceInput>
-    const [isItemInputed, setIsItemInputed] = useState(false);
-
-    const updateItemInput = (value) => {
-        setIsItemInputed(value);
-    };
 
     return(
         <div class='bg-light'>
             <div class='container bg-light w-50'>
-                <ItemInfoInput updateItemInput={updateItemInput}></ItemInfoInput>
-                <OptionInfoInput isDisabled={!isItemInputed}></OptionInfoInput>
+                <ItemInfoInput></ItemInfoInput>
+                <OptionInfoInput></OptionInfoInput>
                 <Modal></Modal>
             </div>
         </div>

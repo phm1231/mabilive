@@ -11,6 +11,9 @@ const optionReducer = (state = initialState.options, action) => {
             return state.map((option, index) =>
                 index === action.index ? action.newOption : option
             );
+        case 'INITIALIZE_OPTION':
+            return initialState.options;
+            
         default:
             return state;
     }
@@ -22,6 +25,8 @@ const levelReducer = (state = initialState.levels, action) => {
             return state.map((level, index) =>
                 index === action.index ? action.newLevel : level
             );
+        case 'INITIALIZE_LEVEL':
+            return initialState.levels;
         default:
             return state;
     }
@@ -33,6 +38,8 @@ const itemInfoReducer = (state = initialState.itemInfo, action) => {
             return state.map((itemInfo, index) =>
                 index === action.index ? action.newItemInfo : itemInfo
             );
+
+        
         default:
             return state;
     }

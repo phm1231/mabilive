@@ -1,14 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Select from 'react-select';
 import { useDispatch } from 'react-redux';
 
-import ranks from '../../constants/data/ranks';
-import itemtypes from '../../constants/data/itemtypes';
-import races from '../../constants/data/races';
+import RANK from '../../constants/data/ranks';
+import ITEM_TYPE from '../../constants/data/itemtypes';
+import RACE from '../../constants/data/races';
 
 import makeSelectOption from '../../utils/makeSelectOption';
 
-function ItemInfoInput(props){
+function ItemInfoInput(){
 
     const dispatch = useDispatch();
 
@@ -16,24 +16,12 @@ function ItemInfoInput(props){
         textAlign: "left",
     };
 
-    const optionRank = makeSelectOption(ranks, false);
-    const optionItemType = makeSelectOption(itemtypes, false);
-    const optionRace = makeSelectOption(races, false);
-
-    const [selectedRank, setSelectedRank] = useState('');
-    const [selectedItemType, setSelectedItemType] = useState('');
-    const [selectedRace, setSelectedRace] = useState('');
-
-    useEffect(() => {
-        if(selectedRank !== '' && selectedItemType !== '' && selectedRace !== '') props.updateItemInput(true);
-        else props.updateItemInput(false);
-    }, [selectedRank, selectedItemType, selectedRace, props]);
+    const optionRank = makeSelectOption(RANK, false);
+    const optionItemType = makeSelectOption(ITEM_TYPE, false);
+    const optionRace = makeSelectOption(RACE, false);
 
     const changeItemInfo = (newItemInfo, index) => {
         dispatch({ type: 'CHANGE_ITEMINFO', index, newItemInfo });
-        if(index === 0) setSelectedRank(newItemInfo);
-        else if(index === 1) setSelectedItemType(newItemInfo);
-        else if(index === 2) setSelectedRace(newItemInfo);
     }; 
 
     return(

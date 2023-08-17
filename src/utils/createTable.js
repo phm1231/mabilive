@@ -8,93 +8,88 @@ function mergeTable(rank, advanced_itemtype, elaborate_itemtype, race, bUseAdvan
     const mergedOptionTable = {};
     // 정세공
     if(elaborate.hasOwnProperty(rank) && elaborate[rank].hasOwnProperty(elaborate_itemtype) && elaborate[rank][elaborate_itemtype].hasOwnProperty(race)){
-            for(let [key, value] of Object.entries(elaborate[rank][elaborate_itemtype][race])){
-                // [rank][itemtype][race] = 옵션이름: {"0" : 옵션 등장 확률, "레벨" : 레벨 등장 확률}
-                mergedOptionTable[key] = {};
-                const minLevel = Number(Object.keys(value)[1]); // [0]은 등장 확률
-                const maxLevel = Number(Object.keys(value)[Object.keys(value).length - 1]);
+        for(let [key, value] of Object.entries(elaborate[rank][elaborate_itemtype][race])){
+            // [rank][itemtype][race] = 옵션이름: {"0" : 옵션 등장 확률, "레벨" : 레벨 등장 확률}
+            mergedOptionTable[key] = {};
+            const minLevel = Number(Object.keys(value)[1]); // [0]은 등장 확률
+            const maxLevel = Number(Object.keys(value)[Object.keys(value).length - 1]);
 
-                // key가 존재한다면
-                if(mergedOptionTable.hasOwnProperty(key)){
-                    // 등장 확률이 존재한다면
-                    if(mergedOptionTable[key].hasOwnProperty("0")){
-                        const tmp = Number(mergedOptionTable[key]["0"]);
-                        mergedOptionTable[key]["0"] = tmp < minLevel ? tmp : minLevel;
-                    }
-                    else{
-                        mergedOptionTable[key]["0"] = minLevel;
-                    }
-                    if(mergedOptionTable[key].hasOwnProperty("1")){
-                        const tmp = Number(mergedOptionTable[key]["1"]);
-                        mergedOptionTable[key]["1"] = tmp > maxLevel ? tmp : maxLevel;
-                    }
-                    else{
-                        mergedOptionTable[key]["1"] = maxLevel;
-                    }
+            // key가 존재한다면
+            if(mergedOptionTable.hasOwnProperty(key)){
+                // 등장 확률이 존재한다면
+                if(mergedOptionTable[key].hasOwnProperty("0")){
+                    const tmp = Number(mergedOptionTable[key]["0"]);
+                    mergedOptionTable[key]["0"] = tmp < minLevel ? tmp : minLevel;
+                }
+                else{
+                    mergedOptionTable[key]["0"] = minLevel;
+                }
+                if(mergedOptionTable[key].hasOwnProperty("1")){
+                    const tmp = Number(mergedOptionTable[key]["1"]);
+                    mergedOptionTable[key]["1"] = tmp > maxLevel ? tmp : maxLevel;
+                }
+                else{
+                    mergedOptionTable[key]["1"] = maxLevel;
                 }
             }
         }
+    }
 
     // 고세공
     if(bUseAdvancedTable && advanced.hasOwnProperty(rank) && advanced[rank].hasOwnProperty(advanced_itemtype) && advanced[rank][advanced_itemtype].hasOwnProperty(race)){
-            for( let [key, value] of Object.entries(advanced[rank][advanced_itemtype][race])){
-                const minLevel = Number(Object.keys(value)[1]); // [0]은 등장 확률
-                const maxLevel = Number(Object.keys(value)[Object.keys(value).length - 1]);
+        for( let [key, value] of Object.entries(advanced[rank][advanced_itemtype][race])){
+            const minLevel = Number(Object.keys(value)[1]); // [0]은 등장 확률
+            const maxLevel = Number(Object.keys(value)[Object.keys(value).length - 1]);
 
-                if(mergedOptionTable.hasOwnProperty(key)){
-                    if(mergedOptionTable[key].hasOwnProperty("0")){
-                        const tmp = Number(mergedOptionTable[key]["0"]);
-                        mergedOptionTable[key]["0"] = tmp < minLevel ? tmp : minLevel;
-                    }
-                    else{
-                        mergedOptionTable[key]["0"] = minLevel;
-                    }
-                    if(mergedOptionTable[key].hasOwnProperty("1")){
-                        const tmp = Number(mergedOptionTable[key]["1"]);
-                        mergedOptionTable[key]["1"] = tmp > maxLevel ? tmp : maxLevel;
-                    }
-                    else{
-                        mergedOptionTable[key]["1"] = maxLevel;
-                    }
+            if(mergedOptionTable.hasOwnProperty(key)){
+                if(mergedOptionTable[key].hasOwnProperty("0")){
+                    const tmp = Number(mergedOptionTable[key]["0"]);
+                    mergedOptionTable[key]["0"] = tmp < minLevel ? tmp : minLevel;
+                }
+                else{
+                    mergedOptionTable[key]["0"] = minLevel;
+                }
+                if(mergedOptionTable[key].hasOwnProperty("1")){
+                    const tmp = Number(mergedOptionTable[key]["1"]);
+                    mergedOptionTable[key]["1"] = tmp > maxLevel ? tmp : maxLevel;
+                }
+                else{
+                    mergedOptionTable[key]["1"] = maxLevel;
                 }
             }
         }
+    }
 
     // 교세공
     const commerce_item = advanced_itemtype;
-    if(bUseCommerceTable &&
-        commerce.hasOwnProperty(rank) && commerce[rank].hasOwnProperty(commerce_item) &&
-        commerce[rank][commerce_item].hasOwnProperty(race)){
-            for( let [key, value] of Object.entries(commerce[rank][commerce_item][race])){
-                const minLevel = Number(Object.keys(value)[1]); // [0]은 등장 확률
-                const maxLevel = Number(Object.keys(value)[Object.keys(value).length - 1]);
+    if(bUseCommerceTable && commerce.hasOwnProperty(rank) && commerce[rank].hasOwnProperty(commerce_item) && commerce[rank][commerce_item].hasOwnProperty(race)){
+        for( let [key, value] of Object.entries(commerce[rank][commerce_item][race])){
+            const minLevel = Number(Object.keys(value)[1]); // [0]은 등장 확률
+            const maxLevel = Number(Object.keys(value)[Object.keys(value).length - 1]);
 
-                if(mergedOptionTable.hasOwnProperty(key)){
-                    if(mergedOptionTable[key].hasOwnProperty("0")){
-                        const tmp = Number(mergedOptionTable[key]["0"]);
-                        mergedOptionTable[key]["0"] = tmp < minLevel ? tmp : minLevel;
-                    }
-                    else{
-                        mergedOptionTable[key]["0"] = minLevel;
-                    }
-                    if(mergedOptionTable[key].hasOwnProperty("1")){
-                        const tmp = Number(mergedOptionTable[key]["1"]);
-                        mergedOptionTable[key]["1"] = tmp > maxLevel ? tmp : maxLevel;
-                    }
-                    else{
-                        mergedOptionTable[key]["1"] = maxLevel;
-                    }
+            if(mergedOptionTable.hasOwnProperty(key)){
+                if(mergedOptionTable[key].hasOwnProperty("0")){
+                    const tmp = Number(mergedOptionTable[key]["0"]);
+                    mergedOptionTable[key]["0"] = tmp < minLevel ? tmp : minLevel;
+                }
+                else{
+                    mergedOptionTable[key]["0"] = minLevel;
+                }
+                if(mergedOptionTable[key].hasOwnProperty("1")){
+                    const tmp = Number(mergedOptionTable[key]["1"]);
+                    mergedOptionTable[key]["1"] = tmp > maxLevel ? tmp : maxLevel;
+                }
+                else{
+                    mergedOptionTable[key]["1"] = maxLevel;
                 }
             }
         }
-
+    }
     return mergedOptionTable;
 }
 
 
 function createTable(itemInfo){
-
-    console.log("itemInfo is ", itemInfo);
 
     let bUseAdvancedTable = true;
     let bUseCommerceTable = false;
@@ -103,7 +98,7 @@ function createTable(itemInfo){
     let itemType = normalization(itemInfo[1]) || 0;
     const race = normalization(itemInfo[2]) || 0;
     
-    if(rank === 0 || itemType === 0 || race === 0) return "";
+    if(rank === 0 || rank === '' || itemType === 0 || itemType === '' || race === 0 || race === '') return false;
 
     // 정교한 세공 도구에 존재하지 않는 아이템 타입에 대하여 아이템 타입 매치
     const classic_str = normalization('클래식 정령 ');

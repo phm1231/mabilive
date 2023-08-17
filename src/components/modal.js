@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 
 
@@ -7,8 +7,11 @@ function Modal(){
     const levels = useSelector(state => state.levels);
     const itemInfo = useSelector(state => state.itemInfo);
 
+    // 중복 확인
+    // const canCalculation = 
+
     return(
-        <div>
+        <div class="mt-5">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 계산하기
             </button>
@@ -34,7 +37,6 @@ function Modal(){
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                     </div>
                 </div>
