@@ -23,5 +23,5 @@ module.exports = {
     advanced,
     commerce,
     kindplus,
-    memorize,
+    memorize
 };

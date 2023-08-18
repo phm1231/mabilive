@@ -47,11 +47,11 @@ function OptionSelect(props){
     }
 
     return(
-        <div class="row">
-            <div class="col-md-9 pe-0" style={textLeftAlign}>
-                <Select placeholder="옵션" key={props.key} options={props.optionList} onChange={(e) => changeOption(e.value, props.index)}/>
+        <div className="row">
+            <div className="col-md-9 pe-0" style={textLeftAlign}>
+                <Select placeholder="옵션" key={props.resetKey} options={props.optionList} onChange={(e) => changeOption(e.value, props.index)}/>
             </div>
-            <div class="col-md-3">
+            <div className="col-md-3">
                 <Select placeholder="레벨" key={levKey} options={levelList} onChange={(e) => changeLevel(e.value, props.index)}/>
             </div>
         </div>

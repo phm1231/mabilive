@@ -38,21 +38,21 @@ function OptionInfoInput(){
     return(
         <div>
             {/* title */}
-            <div class="row">
-                <div class="col text-start mt-5 mb-1">
+            <div className="row">
+                <div className="col text-start mt-5 mb-1">
                     <h3>세공 옵션 입력</h3>
                 </div>
             </div>
             {/* Option 1 */}
-            <div class="row pt-4 bg-white">
+            <div className="row pt-4 bg-white">
                 <OptionSelect key={resetKey} table={table} optionList={optionList} index={0}></OptionSelect>
             </div>
             {/* Option 2 */}
-            <div class="row bg-white">
+            <div className="row bg-white">
                 <OptionSelect key={resetKey} table={table} optionList={optionList} index={1}></OptionSelect>
             </div>
             {/* Option 3 */}
-            <div class="row pb-4 bg-white">
+            <div className="row pb-4 bg-white">
                 <OptionSelect key={resetKey} table={table} optionList={optionList} index={2}></OptionSelect>
             </div>
         </div>

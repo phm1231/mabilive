@@ -7,9 +7,7 @@ function makeSelectOption(items, includeEmptyValue){
         if(typeof(item) === "string") item = item.normalize("NFC");
         ret.push({value: item, label: item});
     }
-
     return ret;
-
 }
 
 export default makeSelectOption;
