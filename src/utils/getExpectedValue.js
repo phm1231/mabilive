@@ -1,8 +1,8 @@
-import { elaborate, brilliant, advanced, commerce, kindplus, memorize } from "../constants/data/probability";
+import { elaborate, brilliant, advanced, commerce, kindplus, memorize, credne } from "../constants/data/probability";
 
 function getExpectedValue(index, itemInfo, options, levels){
-    const tables = [elaborate, brilliant, advanced, kindplus, memorize, commerce];
-    // table에 itemInfor가 존재하는지.
+    const tables = [elaborate, brilliant, advanced, kindplus, memorize, commerce, credne];
+    // table에 itemInfo가 존재하는지.
     if(!checkIsValid(tables[index], itemInfo, options, levels)) return false;
     
     return getProbability(tables[index][itemInfo[0]][itemInfo[1]][itemInfo[2]], options, levels);
@@ -10,7 +10,7 @@ function getExpectedValue(index, itemInfo, options, levels){
 
 export default getExpectedValue;
 
-function checkIsValid(table, itemInfo, options){
+function checkIsValid(table, itemInfo, options, levels){
     // table에 itemInfo가 존재함.
     if(table.hasOwnProperty(itemInfo[0]) && table[itemInfo[0]].hasOwnProperty(itemInfo[1]) && table[itemInfo[0]][itemInfo[1]].hasOwnProperty(itemInfo[2])){
 
@@ -18,6 +18,7 @@ function checkIsValid(table, itemInfo, options){
         for(let i=0; i<3; i++){
             if(options[i] === '') continue;
             if(!t.hasOwnProperty(options[i])) return false;
+            if(!t[options[i]].hasOwnProperty(levels[i])) return false;
         }
         return true;
     }

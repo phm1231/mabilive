@@ -12,7 +12,7 @@ function OptionSelect(props){
     const emptyLevel = {value: '', label: '세공 옵션을 입력해주세요.'};
 
     const [levelList, setLevelList] = useState([emptyLevel]);
-    const [levKey, setLevKey] = useState(0);
+    const [levelKey, setLevelKey] = useState(0);
 
     const textLeftAlign = {
         textAlign: "left",
@@ -25,7 +25,7 @@ function OptionSelect(props){
         dispatch({ type: 'CHANGE_LEVEL', index, newLevel }); // 선택한 레벨 제거
 
         setLevelList(getLevelList(newOption)); // 레벨 리스트 새로 만듦
-        setLevKey(levKey + 1); // 레벨 select 박스 새로고침
+        setLevelKey(levelKey + 1); // 레벨 select 박스 새로고침
     }; 
 
     // 선택한 레벨 변경
@@ -52,7 +52,7 @@ function OptionSelect(props){
                 <Select placeholder="옵션" key={props.resetKey} options={props.optionList} onChange={(e) => changeOption(e.value, props.index)}/>
             </div>
             <div className="col-md-3">
-                <Select placeholder="레벨" key={levKey} options={levelList} onChange={(e) => changeLevel(e.value, props.index)}/>
+                <Select placeholder="레벨" key={levelKey} options={levelList} onChange={(e) => changeLevel(e.value, props.index)}/>
             </div>
         </div>
     )

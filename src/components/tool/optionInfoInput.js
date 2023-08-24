@@ -24,7 +24,7 @@ function OptionInfoInput(){
 
         // 옵션 테이블에 맞는 선택 리스트 생성
         if(!newTable || Object.keys(newTable).length === 0) setOptionList([emptyOption]);
-        else setOptionList(makeSelectOption(Object.keys(newTable))); 
+        else setOptionList(makeSelectOption(Object.keys(newTable), true)); 
 
         // redux에서 옵션, 레벨값 초기화
         dispatch({ type: 'INITIALIZE_OPTION' });
