@@ -11,7 +11,7 @@ function App() {
       <Nav />
       <Router basename={process.env.PUBLIC_URL}>
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route exact path="/" element={<Home />}/>
           <Route path="/enchant" element={<Enchant />}/>
         </Routes>
       </Router>
