@@ -27,7 +27,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://phm1231.github.io/mabilive",
+  "homepage": "https://phm1231.github.io/mabitool",
   "eslintConfig": {
     "extends": [
       "react-app",
