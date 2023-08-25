@@ -10,7 +10,7 @@ function NavigationBar(){
             <div className="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
                 <ul className="navbar-nav">
                 <li className="nav-item">
-                    <a className="nav-link" href="/home">세공</a>
+                    <a className="nav-link" href="/">세공</a>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="/enchant">인챈트</a>

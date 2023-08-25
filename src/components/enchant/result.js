@@ -12,7 +12,7 @@ function Result(props){
 
     const KforExpectedCount = 1 - 0.63;
 
-    const colors = ["#256498", "#BA8F5E", "#F3C645", "#CD4141", "#F4DF4A", "#3E75B4", "#000000"];
+    const colors = ["#256498", "#81A7CB", "#99BE90", "#FBCB05", "#A056E9"];
     const imgStyle={
         height: "45px",
         width: "50px"

@@ -11,7 +11,7 @@ function App() {
       <Nav />
       <Router>
         <Routes>
-          <Route path="/home" element={<Home />}/>
+          <Route path="/" element={<Home />}/>
           <Route path="/enchant" element={<Enchant />}/>
         </Routes>
       </Router>

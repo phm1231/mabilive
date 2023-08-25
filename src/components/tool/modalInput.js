@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-function ModalTitle(){
+function ModalInput(){
     const options = useSelector(state => state.options);
     const levels = useSelector(state => state.levels);
 
@@ -32,4 +32,4 @@ function ModalTitle(){
   );
 }
 
-export default ModalTitle;
+export default ModalInput;

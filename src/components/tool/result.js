@@ -14,7 +14,7 @@ function Result(props){
 
     const [oneTimeProb, setOneTimeProb] = useState(false);
     
-    const colors = ["#256498", "#BA8F5E", "#F3C645", "#CD4141", "#F4DF4A", "#3E75B4", "#000000"]; // 정교 영롱 고급 착세플 기억 교역 크레드네
+    const colors = ["#256498", "#BA8F5E", "#F3C645", "#CD4141", "#F4DF4A", "#3E75B4", "#FF0000"]; // 정교 영롱 고급 착세플 기억 교역 크레드네
     const imgStyle={
         height: "45px",
         width: "50px"
@@ -28,9 +28,9 @@ function Result(props){
     if(oneTimeProb !== false){
         const outputProb = oneTimeProb * 100;
         const ROUND_DIGIT = (getRoundDigit(outputProb) + 4) % 20;
-        const p10 = getExpectedCount(oneTimeProb, 1-0.1);
-        const p63 = getExpectedCount(oneTimeProb, 1-0.63);
-        const p90 = getExpectedCount(oneTimeProb, 1-0.9);
+        const p10 = Math.max(getExpectedCount(oneTimeProb, 1-0.1), 1);
+        const p63 = Math.max(getExpectedCount(oneTimeProb, 1-0.63), 1);
+        const p90 = Math.max(getExpectedCount(oneTimeProb, 1-0.9), 1);
 
         return(
             <div className="row">

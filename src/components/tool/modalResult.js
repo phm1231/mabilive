@@ -1,6 +1,6 @@
 import React  from 'react';
 import Result from './result';
-import ModalTitle from './modalTitle';
+import ModalInput from './modalInput';
 
 function ModalResult(){
 
@@ -8,7 +8,7 @@ function ModalResult(){
         <div className="modal-body container">
             <div className="row">
                 <div className="col-md-6"><Result index={0}></Result></div>
-                <div className="col-md-6"><ModalTitle></ModalTitle></div>
+                <div className="col-md-6"><ModalInput></ModalInput></div>
             </div>
             <hr></hr>
             <div className="row">
