@@ -16,6 +16,8 @@ kaleido,
 kind,
 */
 
+const enchant = require('../json/enchant.json');
+
 module.exports = {
     elaborate,
     brilliant,
@@ -24,4 +26,5 @@ module.exports = {
     kindplus,
     memorize,
     credne,
+    enchant,
 };

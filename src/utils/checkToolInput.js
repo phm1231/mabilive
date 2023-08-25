@@ -1,4 +1,4 @@
-function checkInput(options, levels){
+function checkToolInput(options, levels){
     // 중복된 옵션 확인
     for(let i=0; i<3; i++){
         if(options[i] === '') continue;
@@ -21,4 +21,4 @@ function checkInput(options, levels){
     return true;
 }
 
-export default checkInput;
+export default checkToolInput;

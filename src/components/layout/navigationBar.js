@@ -15,9 +15,6 @@ function NavigationBar(){
                 <li className="nav-item">
                     <a className="nav-link" href="/enchant">인챈트</a>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="/stone">개조석</a>
-                </li>
                 </ul>
             </div>
             </div>

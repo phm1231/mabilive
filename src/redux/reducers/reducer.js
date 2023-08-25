@@ -1,7 +1,8 @@
 const initialState = {
     itemInfo: ['', '', ''],
     options: ['', '', ''],
-    levels: ['', '', '']
+    levels: ['', '', ''],
+    enchant: ''
 };
   
 
@@ -39,10 +40,19 @@ const itemInfoReducer = (state = initialState.itemInfo, action) => {
                 index === action.index ? action.newItemInfo : itemInfo
             );
 
-        
+        default:
+            return state;
+    }
+};
+
+const enchantReducer = (state = initialState.enchant, action) => {
+
+    switch(action.type){
+        case 'CHANGE_ENCHANT':
+            return action.newEnchant;
         default:
             return state;
     }
 };
   
-export { optionReducer, levelReducer, itemInfoReducer };
+export { optionReducer, levelReducer, itemInfoReducer, enchantReducer };

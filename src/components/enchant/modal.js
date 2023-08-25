@@ -1,17 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import { useSelector } from 'react-redux';
-import checkToolInput from '../../utils/checkToolInput';
 import ModalResult from './modalResult';
+import { useSelector } from 'react-redux';
 
 function Modal(){
-    const options = useSelector(state => state.options);
-    const levels = useSelector(state => state.levels);
+    const enchant = useSelector(state => state.enchant);
 
     const [isValidInput, setIsValidInput] = useState(false);
 
     useEffect(()=>{
-      setIsValidInput(checkToolInput(options, levels));
-    }, [options, levels])
+        if(enchant !== '') setIsValidInput(true);
+        else setIsValidInput(false);        
+      }, [enchant])
 
     return(
         <div className="mt-5">

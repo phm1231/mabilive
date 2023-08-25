@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 function ModalTitle(){
     const options = useSelector(state => state.options);
     const levels = useSelector(state => state.levels);
+
     const imgStyle={
       height: "45px",
       width: "50px"
-  };
+    };
 
     return(
       <div className="row">
@@ -30,17 +31,5 @@ function ModalTitle(){
       </div>
   );
 }
-
-/*
-        <ul>
-          {options.map((option, index) => (
-            <li key={index}>
-              {options[index]}
-              {levels[index]}
-              {itemInfo[index]}
-            </li>
-          ))}
-        </ul>
-*/
 
 export default ModalTitle;

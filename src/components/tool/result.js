@@ -5,7 +5,7 @@ import getExpectedCount from '../../utils/getExpectedCount';
 import getRoundDigit from '../../utils/getRoundDigit';
 import addCommas from '../../utils/addCommas';
 import toolnames from '../../constants/data/toolnames';
-import imgs from '../../constants/data/imgs';
+import {toolImgs} from '../../constants/data/imgs';
 
 function Result(props){
     const options = useSelector(state => state.options);
@@ -13,6 +13,7 @@ function Result(props){
     const itemInfo = useSelector(state => state.itemInfo);
 
     const [oneTimeProb, setOneTimeProb] = useState(false);
+    
     const colors = ["#256498", "#BA8F5E", "#F3C645", "#CD4141", "#F4DF4A", "#3E75B4", "#000000"]; // 정교 영롱 고급 착세플 기억 교역 크레드네
     const imgStyle={
         height: "45px",
@@ -22,7 +23,7 @@ function Result(props){
     useEffect(()=>{
         const newOneTimeProb = getExpectedValue(props.index, itemInfo, options, levels);
         setOneTimeProb(newOneTimeProb);
-    }, [itemInfo, options, levels]);
+    }, [itemInfo, options, levels, props]);
 
     if(oneTimeProb !== false){
         const outputProb = oneTimeProb * 100;
@@ -35,7 +36,7 @@ function Result(props){
             <div className="row">
                 <div className="col ms-0">
                     <div className="d-flex align-items-center">
-                        <img className="image-fluid" style={imgStyle} src={imgs[props.index]} alt={toolnames[props.index]}></img>
+                        <img className="image-fluid" style={imgStyle} src={toolImgs[props.index]} alt={toolnames[props.index]}></img>
                         <div className="text-start d-inline-block fs-4 fw-bold">
                             <font color={colors[props.index]}>{toolnames[props.index]}</font>
                         </div>
@@ -74,7 +75,7 @@ function Result(props){
             <div className="row">
                 <div className="col ms-0">
                     <div className="d-flex align-items-center">
-                        <img className="image-fluid" style={imgStyle} src={imgs[props.index]} alt={toolnames[props.index]}></img>
+                        <img className="image-fluid" style={imgStyle} src={toolImgs[props.index]} alt={toolnames[props.index]}></img>
                         <div className="text-start d-inline-block fs-4 fw-bold">
                             <font color={colors[props.index]}>{toolnames[props.index]}</font>
                         </div>
@@ -91,15 +92,5 @@ function Result(props){
         );        
     }
 }
-/*
-        <ul>
-          {options.map((option, index) => (
-            <li key={index}>
-              {options[index]}
-              {levels[index]}
-              {itemInfo[index]}
-            </li>
-          ))}
-        </ul>
-*/
+
 export default Result;
