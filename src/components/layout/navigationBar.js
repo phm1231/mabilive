@@ -3,7 +3,7 @@ function NavigationBar(){
     return(
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
             <div className="container-fluid w-50">
-            <a className="navbar-brand" href="/home">마비노기 기댓값 계산기</a>
+            <a className="navbar-brand" href="/">마비노기 기댓값 계산기</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span className="navbar-toggler-icon"></span>
             </button>

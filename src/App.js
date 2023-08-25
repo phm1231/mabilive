@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App d-flex flex-column min-vh-100 bg-light">
       <Nav />
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/enchant" element={<Enchant />}/>
