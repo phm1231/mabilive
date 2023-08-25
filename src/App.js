@@ -8,8 +8,8 @@ import Footer from './components/layout/footer';
 function App() {
   return (
     <div className="App d-flex flex-column min-vh-100 bg-light">
-      <Nav />
       <Router basename={process.env.PUBLIC_URL}>
+        <Nav />
         <Routes>
           <Route exact path="/" element={<Home />}/>
           <Route path="/enchant" element={<Enchant />}/>
