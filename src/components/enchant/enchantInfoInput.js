@@ -6,7 +6,7 @@ function EncahntInfoInput(){
     const dispatch = useDispatch();
     const options = ['F', 'E', 'D', 'C', 'B', 'A', '9', '8', '7', '6', '5', '4', '3', '2', '1'];
   
-    const changeEnchant= (newEnchant) => {;
+    const changeEnchant= (newEnchant) => {
         dispatch({ type: 'CHANGE_ENCHANT', newEnchant});
     }; 
   

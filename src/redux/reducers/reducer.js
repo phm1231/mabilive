@@ -50,6 +50,8 @@ const enchantReducer = (state = initialState.enchant, action) => {
     switch(action.type){
         case 'CHANGE_ENCHANT':
             return action.newEnchant;
+        case 'INITIALIZE_ENCHANT':
+            return initialState.enchant;
         default:
             return state;
     }
